@@ -4,7 +4,7 @@ from .serializers import EntitySerializer, EntityDetailSerializer
 
 
 class EntitiesView(generics.ListAPIView):
-    queryset = Entity.objects.all()
+    queryset = Entity.objects.all().order_by('-creation_date')
     serializer_class = EntitySerializer
 
 

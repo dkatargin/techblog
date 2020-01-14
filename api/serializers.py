@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Entity
 
-preview_length = 140
+preview_length = 500
 
 
 class EntitySerializer(serializers.ModelSerializer):
