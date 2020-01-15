@@ -9,7 +9,7 @@ $ python3 createsuperuser
 ```
 next step is docker deploy
 ```bash
-$ docker-compose build && dokcer-compose up -d
+$ docker-compose build && docker-compose up -d
 ```
 after this you get nginx service on 80 port
 
