@@ -15,4 +15,4 @@ RUN pip install -r requirements.txt
 
 COPY db.sqlite3 /app/
 
-CMD python3 manage.py collectstatic ; /usr/local/bin/uwsgi --yml /app/uwsgi.yml
+CMD python3 manage.py collectstatic --noinput ; /usr/local/bin/uwsgi --yml /app/uwsgi.yml
