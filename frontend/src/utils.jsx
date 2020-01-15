@@ -1,5 +1,13 @@
 export default function Fetcher(uri, request_method, callback) {
-    const API_DOMAIN = 'http://127.0.0.1:8000';
+    if(!uri){
+        console.error('URI is null');
+        return
+    }
+    let API_DOMAIN = '';
+    if(!uri.startsWith('http')){
+        API_DOMAIN = 'http://127.0.0.1:8000';
+    }
+
     const req_params = {
         method: 'GET',
         headers: {
