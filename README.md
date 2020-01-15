@@ -13,6 +13,9 @@ $ docker-compose build && docker-compose up -d
 ```
 after this you get nginx service on 80 port
 
+# Manage posts
+You can add/modify/delete posts over django-admin(/admin)
+
 # Todo list
 | Feature        | Status       |
 | ------------- |:-------------:|
