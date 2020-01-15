@@ -8,11 +8,10 @@ Just simple blog with **django** and **react** :)
 | Initial API for posts |  **OK** |
 | Initial styles        |  **OK** |
 | Initial react-screens |  **OK** |
-| Add global variables to js-config  |  WIP |
-| Main screen pagination             |  WIP |
+| Add global variables to js-config  |  **OK**  |
+| Main screen pagination             |  **OK** |
 | Replace react default icons        |  WIP |
 | Add webpack build                  |  WIP |
-| Integrate with Gatsby prerender    |  WIP |
 | Extended editor for posts          | WIP |
 | Post Tags                          | WIP |
 | Posts calendar                     | WIP |

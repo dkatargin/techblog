@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import Fetcher from "../utils";
-import '../App.css'
+import Fetcher from "../common/fetcher";
+import '../styles/App.css'
 
 export default class EntityScreen extends React.Component {
     constructor(props) {
