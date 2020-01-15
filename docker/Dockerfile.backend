@@ -1,0 +1,18 @@
+FROM python:3.7
+
+RUN mkdir /app
+WORKDIR /app
+
+COPY requirements.txt /app/
+COPY manage.py /app/
+COPY techblog /app/techblog
+COPY api /app/api
+COPY etc/uwsgi.yml /app/
+COPY etc/settings.prod.py /app/
+
+RUN pip install uwsgi
+RUN pip install -r requirements.txt
+
+COPY db.sqlite3 /app/
+
+CMD python3 manage.py collectstatic ; /usr/local/bin/uwsgi --yml /app/uwsgi.yml

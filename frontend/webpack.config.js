@@ -14,7 +14,7 @@ module.exports = (env, argv) => ({
     output: {
         path: path.resolve('public/build'),
         filename: '[name].[hash].js',
-        publicPath: '/build/'
+        publicPath: '/'
     },
 
     resolve: {
@@ -23,8 +23,6 @@ module.exports = (env, argv) => ({
         modules: [
             "node_modules",
             path.resolve(__dirname, "src/"),
-            path.resolve(__dirname, "public/css"),
-            path.resolve(__dirname, "public/fonts"),
         ]
     },
 
@@ -83,6 +81,7 @@ module.exports = (env, argv) => ({
             verbose: true
         }),
         new HtmlWebpackPlugin({
+            favicon: 'public/favicon.ico',
             template: "public/index.html"
         }),
     ],

@@ -1,0 +1,9 @@
+FROM node:13
+
+RUN mkdir /app/
+WORKDIR /app/
+
+COPY ./frontend/ /app/
+RUN npm i
+
+CMD ["npm", "run", "build"]

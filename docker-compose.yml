@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    volumes:
+      - django_static:/app/static/
+
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.frontend
+    environment:
+      - BACKEND_ADDR="http://backend:8000/"
+    volumes:
+      - frontend_dist:/app/public/build/
+    links:
+      - backend
+
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.nginx
+    volumes:
+      - frontend_dist:/frontend/
+      - django_static:/static/
+    ports:
+      - "80:80"
+    links:
+      - backend
+
+volumes:
+  django_static:
+  frontend_dist:
