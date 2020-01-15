@@ -31,5 +31,6 @@ You can add/modify/delete posts over django-admin(/admin)
 | Extended editor for posts          | WIP |
 | Post Tags                          | WIP |
 | Posts calendar                     | WIP |
+| Mobile view                        | WIP |
 | SEO improvements                   | WIP |
 | Comments                           | WIP |
