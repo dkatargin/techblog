@@ -12,7 +12,7 @@ class App extends Component {
        <Router history={history}>
             <section className="b-page">
             <Switch>
-                <Route path="/:slug/" component={EntityScreen} />
+                <Route path="/post/:slug/" component={EntityScreen} />
                 <Route path="/" component={IndexScreen} />
             </Switch>
         </section>
