@@ -23,7 +23,7 @@ export default class EntityScreen extends React.Component {
 
     formatDateTime(timeString) {
         let dateObj = new Date(timeString);
-        return `${("0" + dateObj.getDay()).slice(-2)}/${("0" + (dateObj.getMonth() + 1)).slice(-2)}/${dateObj.getFullYear()} ${dateObj.getHours()}:${dateObj.getMinutes()}`
+        return `${("0" + dateObj.getDate()).slice(-2)}/${("0" + (dateObj.getMonth() + 1)).slice(-2)}/${dateObj.getFullYear()} ${dateObj.getHours()}:${dateObj.getMinutes()}`
     }
 
     render() {
