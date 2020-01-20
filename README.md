@@ -28,7 +28,7 @@ You can add/modify/delete posts over django-admin(/admin)
 | Replace react default icons        |  **OK** |
 | Add webpack build                  |  **OK** |
 | Deployment with docker             | **OK** |
-| Extended editor for posts          | WIP |
+| Extended editor for posts          | **OK** |
 | Post Tags                          | WIP |
 | Posts calendar                     | WIP |
 | Mobile view                        | WIP |

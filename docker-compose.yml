@@ -7,6 +7,7 @@ services:
       dockerfile: docker/Dockerfile.backend
     volumes:
       - django_static:/app/static/
+      - django_media:/app/media/
 
   frontend:
     build:
@@ -26,6 +27,7 @@ services:
     volumes:
       - frontend_dist:/frontend/
       - django_static:/static/
+      - django_media:/media/
     ports:
       - "80:80"
     links:
@@ -33,4 +35,5 @@ services:
 
 volumes:
   django_static:
+  django_media:
   frontend_dist:
