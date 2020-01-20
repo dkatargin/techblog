@@ -48,7 +48,9 @@ export default class IndexScreen extends React.Component {
             cards.push(<div key={item.slug} className="content-card content-background">
                 <div key={'card_title__' + item.slug} className="card-title"><Link
                     to={`/post/${item.slug}/`}>{item.title}</Link></div>
-                <div key={'card_prev__' + item.slug} className="card-preview">{item.preview}</div>
+                <div key={'card_prev__' + item.slug} className="card-preview">
+                    <div dangerouslySetInnerHTML={{__html: item.preview}}/>
+                </div>
                 <div key={'card_footer__' + item.slug} className="card-footer">
                     {dates}
                 </div>

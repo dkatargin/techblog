@@ -7,4 +7,5 @@ from api.urls import urlpatterns as api_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     url('api/', include(api_urls)),
+    path('summernote/', include('django_summernote.urls')),
 ]
