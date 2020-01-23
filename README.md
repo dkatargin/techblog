@@ -29,7 +29,7 @@ You can add/modify/delete posts over django-admin(/admin)
 | Add webpack build                  |  **OK** |
 | Deployment with docker             | **OK** |
 | Extended editor for posts          | **OK** |
-| Post Tags                          | WIP |
+| Post Tags                          | **OK** |
 | Posts calendar                     | WIP |
 | Mobile view                        | WIP |
 | SEO improvements                   | WIP |
