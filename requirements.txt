@@ -1,3 +1,4 @@
-django
+django == 3.1.2
+django-cors-headers == 3.5.0
+djangorestframework == 3.12.1
 django-summernote
-djangorestframework

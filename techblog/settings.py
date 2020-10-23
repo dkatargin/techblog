@@ -24,10 +24,10 @@ SECRET_KEY = 'fqgowqo7%$wyo=enu9r(fmd=)3y*o^iuecz9w+gd!h2yetre6e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = "*"
+CORS_ORIGIN_ALLOW_ALL = DEBUG
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
     'django_summernote',
     'api'

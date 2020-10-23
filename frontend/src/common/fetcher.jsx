@@ -4,6 +4,8 @@ export default function Fetcher(uri, request_method, callback) {
         return
     }
 
+    const full_uri = `http://exobook:8000${uri}`
+
     const req_params = {
         method: 'GET',
         headers: {
@@ -12,7 +14,7 @@ export default function Fetcher(uri, request_method, callback) {
         }
     };
 
-    fetch(uri, req_params)
+    fetch(full_uri, req_params)
         .then(response => {
             if (!response.ok) {
                 throw response.json()
