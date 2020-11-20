@@ -11,8 +11,12 @@ class EntityTagsSerializer(serializers.ModelSerializer):
 
 
 class EntitySerializer(serializers.ModelSerializer):
-    tags = EntityTagsSerializer(many=True)
+    tags = serializers.SerializerMethodField()
     preview = serializers.SerializerMethodField()
+
+    @staticmethod
+    def get_tags(instance):
+        return [t.name for t in instance.tags.all()]
 
     @staticmethod
     def get_preview(obj):
