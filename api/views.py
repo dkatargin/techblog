@@ -1,12 +1,17 @@
 import datetime
 from rest_framework import generics, response, status
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import Entity
+from .filters import TagFilter
 from .serializers import EntitySerializer, EntityDetailSerializer
 
 
 class EntitiesView(generics.ListAPIView):
     queryset = Entity.objects.all().order_by('-creation_date')
     serializer_class = EntitySerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['tags', ]
+    filter_class = TagFilter
 
 
 class EntitiesDetailView(generics.RetrieveAPIView):
