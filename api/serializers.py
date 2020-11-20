@@ -11,6 +11,7 @@ class EntityTagsSerializer(serializers.ModelSerializer):
 
 
 class EntitySerializer(serializers.ModelSerializer):
+    tags = EntityTagsSerializer(many=True)
     preview = serializers.SerializerMethodField()
 
     @staticmethod
