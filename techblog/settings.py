@@ -5,8 +5,10 @@ SECRET_KEY = 'fqgowqo7%$wyo=enu9r(fmd=)3y*o^iuecz9w+gd!h2yetre6e'
 
 
 DEBUG = True
-ALLOWED_HOSTS = []
 
+ALLOWED_HOSTS = "*"
+
+# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -16,6 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_summernote',
     'api'
 ]
 
@@ -30,6 +33,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'techblog.urls'
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 
 TEMPLATES = [
     {

@@ -43,7 +43,9 @@ export default class EntityScreen extends React.Component {
         return (
             <div className="content-card content-background">
                 <div className="card-title"><Link to={`/`}>{this.state.data.title}</Link></div>
-                <div className="card-preview">{this.state.data.text}</div>
+                <div className="card-preview">
+                    <div dangerouslySetInnerHTML={{__html: this.state.data.text}}/>
+                </div>
                 <div className="card-footer">
                     {dates}
                 </div>

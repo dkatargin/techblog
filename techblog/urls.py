@@ -6,5 +6,6 @@ from api.urls import urlpatterns as api_urls
 
 urlpatterns = [
     path('admin/blog/', admin.site.urls),
-    url('api/blog/', include(api_urls)),
+    url('api/blog/rest/', include(api_urls)),
+    path('api/blog/summernote/', include('django_summernote.urls')),
 ]
