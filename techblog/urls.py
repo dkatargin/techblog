@@ -5,6 +5,6 @@ from django.urls import path
 from api.urls import urlpatterns as api_urls
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    url('api/', include(api_urls)),
+    path('admin/blog/', admin.site.urls),
+    url('api/blog/', include(api_urls)),
 ]
