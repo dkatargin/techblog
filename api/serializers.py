@@ -31,6 +31,12 @@ class EntitySerializer(serializers.ModelSerializer):
 
 
 class EntityDetailSerializer(serializers.ModelSerializer):
+    tags = serializers.SerializerMethodField()
+
+    @staticmethod
+    def get_tags(instance):
+        return [t.name for t in instance.tags.all()]
+
     class Meta:
         model = Entity
         fields = '__all__'
