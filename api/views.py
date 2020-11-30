@@ -1,42 +1,50 @@
 import datetime
-from rest_framework import generics, response, status
+
 from django_filters.rest_framework import DjangoFilterBackend
-from .models import Entity
+from rest_framework import generics, response, status
+
 from .filters import TagFilter
+from .models import Entity
 from .serializers import EntitySerializer, EntityDetailSerializer
 
 
 class EntitiesView(generics.ListAPIView):
-    queryset = Entity.objects.all().order_by('-creation_date')
+    queryset = Entity.objects.all().order_by("-creation_date")
     serializer_class = EntitySerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['tags', ]
+    filterset_fields = [
+        "tags",
+    ]
     filter_class = TagFilter
 
 
 class EntitiesDetailView(generics.RetrieveAPIView):
     queryset = Entity.objects.all()
     serializer_class = EntityDetailSerializer
-    lookup_field = 'slug'
+    lookup_field = "slug"
 
 
 class CalendarView(generics.GenericAPIView):
-    queryset = Entity.objects.all().order_by('-creation_date')
+    queryset = Entity.objects.all().order_by("-creation_date")
 
     def get(self, request):
         current_month = datetime.datetime.now().strftime("%Y-%m")
-        date_str = request.GET.get('date', current_month)
+        date_str = request.GET.get("date", current_month)
         try:
             date = datetime.datetime.strptime(date_str, "%Y-%m")
         except ValueError:
-            return response.Response({"msg": "Wrong date format. Please use YYYY-MM"},
-                                     status=status.HTTP_400_BAD_REQUEST)
+            return response.Response(
+                {"msg": "Wrong date format. Please use YYYY-MM"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
 
         timedelta = datetime.timedelta(days=31)
-        qs = self.queryset.filter(creation_date__gte=date).filter(creation_date__lt=date + timedelta)
+        qs = self.queryset.filter(creation_date__gte=date).filter(
+            creation_date__lt=date + timedelta
+        )
         result = {}
         for i in qs:
-            i_data = {'title': i.title, 'slug': i.slug}
+            i_data = {"title": i.title, "slug": i.slug}
             if not result.get(i.creation_date):
                 result[i.creation_date.day] = [i_data]
             else:

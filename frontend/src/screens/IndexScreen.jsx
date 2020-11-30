@@ -59,11 +59,11 @@ export default class IndexScreen extends React.Component {
         return cards
     }
 
-    getPage(event){
-        if(event.target.id === 'next'){
+    getPage(event) {
+        if (event.target.id === 'next') {
             Fetcher(this.state.data.next, 'GET', this.handleData)
         }
-        if(event.target.id === 'prev'){
+        if (event.target.id === 'prev') {
             Fetcher(this.state.data.previous, 'GET', this.handleData)
         }
     }

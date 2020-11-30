@@ -4,22 +4,29 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('api', '0001_initial'),
+        ("api", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Tag',
+            name="Tag",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=250)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=250)),
             ],
         ),
         migrations.AddField(
-            model_name='entity',
-            name='tags',
-            field=models.ManyToManyField(blank=True, null=True, to='api.Tag'),
+            model_name="entity",
+            name="tags",
+            field=models.ManyToManyField(blank=True, null=True, to="api.Tag"),
         ),
     ]

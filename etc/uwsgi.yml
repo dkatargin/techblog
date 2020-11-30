@@ -1,16 +1,16 @@
 uwsgi:
-      http-socket:    :8000
-      chdir:          /app/techblog/
-      wsgi-file:      /app/techblog/wsgi.py
-      python-path:    /app/
+  http-socket: :8000
+  chdir: /app/techblog/
+  wsgi-file: /app/techblog/wsgi.py
+  python-path: /app/
 
-      processes:               5
-      listen:                  100
-      http-timeout:            15
-      http-keepalive:          15
-      buffer-size:             32768
-      max-requests:            10000
-      enable-threads:          true
-      ignore-sigpipe:          true
-      ignore-write-errors:     true
-      disable-write-exception: true
+  processes: 5
+  listen: 100
+  http-timeout: 15
+  http-keepalive: 15
+  buffer-size: 32768
+  max-requests: 10000
+  enable-threads: true
+  ignore-sigpipe: true
+  ignore-write-errors: true
+  disable-write-exception: true

@@ -1,5 +1,5 @@
 export default function Fetcher(uri, request_method, callback) {
-    if(!uri){
+    if (!uri) {
         console.error('URI is null');
         return
     }

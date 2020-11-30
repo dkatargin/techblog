@@ -31,15 +31,15 @@ export default class EntityScreen extends React.Component {
             return null
         }
         let dates = <div className="card-creation_date">{this.formatDateTime(this.state.data.creation_date)}</div>;
-            if (this.formatDateTime(this.state.data.edit_date) !== this.formatDateTime(this.state.data.creation_date)) {
-                dates = <React.Fragment>
-                    <div className="card-creation_date">{this.formatDateTime(this.state.data.creation_date)}</div>
+        if (this.formatDateTime(this.state.data.edit_date) !== this.formatDateTime(this.state.data.creation_date)) {
+            dates = <React.Fragment>
+                <div className="card-creation_date">{this.formatDateTime(this.state.data.creation_date)}</div>
 
-                    <div className="card-edit_date">(updated at: {this.formatDateTime(this.state.data.edit_date)})
-                    </div>
+                <div className="card-edit_date">(updated at: {this.formatDateTime(this.state.data.edit_date)})
+                </div>
 
-                </React.Fragment>
-            }
+            </React.Fragment>
+        }
         return (
             <div className="content-card content-background">
                 <div className="card-title"><Link to={`/`}>{this.state.data.title}</Link></div>
@@ -50,7 +50,7 @@ export default class EntityScreen extends React.Component {
                     {dates}
                 </div>
             </div>
-                )
+        )
     }
 
 }
